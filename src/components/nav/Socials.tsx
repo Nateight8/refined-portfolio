@@ -18,7 +18,14 @@ type Props = {};
 
 function Socials({}: Props) {
   return (
-    <Stack direction="row" alignItems="center" justifyContent="space-between">
+    <Stack
+      sx={{
+        flexDirection: { xs: "column", sm: "row" },
+        alignItems: { md: "center" },
+      }}
+      alignItems="center"
+      justifyContent="space-between"
+    >
       <Box>
         <Tooltip title="currently in" arrow>
           <Button variant="text" startIcon={<PersonPinIcon />}>
@@ -31,7 +38,7 @@ function Socials({}: Props) {
           </Button>
         </Tooltip>
       </Box>
-      <Box>
+      <Box sx={{ display: { xs: "none", sm: "block" } }}>
         <IconButton aria-label="twitter">
           <TwitterIcon />
         </IconButton>

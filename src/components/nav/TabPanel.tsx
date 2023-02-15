@@ -11,7 +11,7 @@ export default function TabPanel(Props: TabPanelProps) {
   const { children, index, value, ...other } = Props;
 
   return (
-    <Box hidden={value !== index} {...other}>
+    <Box sx={{ minHeight: "90vh" }} hidden={value !== index} {...other}>
       {value === index && <Box>{children}</Box>}
     </Box>
   );

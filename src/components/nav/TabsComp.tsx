@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import { Tabs, Box, Tab, Typography } from "@mui/material";
 import TabPanel from "./TabPanel";
@@ -13,9 +13,16 @@ function TabsComp({}: Props) {
     setValue(newValue);
   };
 
+  const box = useRef();
+
+  useEffect(() => {
+    console.log(box.current.clientHeight);
+  }, []);
+
   return (
     <>
       <Box
+        ref={box}
         sx={{
           borderBottom: 1,
           borderColor: "rgba(124,124,125,0.6)",

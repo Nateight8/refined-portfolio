@@ -9,10 +9,10 @@ function NavBar({}: Props) {
     <Box
       sx={{
         marginTop: "5rem",
-        position: "sticky",
-        top: "1.25rem",
         background: "#111010",
-        // zIndex: 2000,
+        position: "sticky",
+        top: { xs: "-55%", sm: "-12.75rem", lg: "" },
+        // bottom: "48px",
       }}
     >
       <Box sx={{ paddingBottom: "0.5rem" }}>

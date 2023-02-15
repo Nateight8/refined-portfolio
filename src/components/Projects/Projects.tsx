@@ -11,11 +11,6 @@ function Projects({}: Props) {
       <Project />
       <Project />
       <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
-      <Project />
     </Grid>
   );
 }

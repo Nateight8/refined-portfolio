@@ -11,8 +11,9 @@ function NavBar({}: Props) {
         marginTop: "5rem",
         background: "#111010",
         position: "sticky",
-        top: { xs: "-55%", sm: "-12.75rem", lg: "" },
+        top: { xs: "-15rem", sm: "-12.75rem" },
         // bottom: "48px",
+        zIndex: 1000,
       }}
     >
       <Box sx={{ paddingBottom: "0.5rem" }}>

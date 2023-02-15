@@ -13,16 +13,16 @@ function TabsComp({}: Props) {
     setValue(newValue);
   };
 
-  const box = useRef();
+  // const box = useRef();
 
-  useEffect(() => {
-    console.log(box.current.clientHeight);
-  }, []);
+  // useEffect(() => {
+
+  // }, []);
 
   return (
     <>
       <Box
-        ref={box}
+        // ref={box}
         sx={{
           borderBottom: 1,
           borderColor: "rgba(124,124,125,0.6)",

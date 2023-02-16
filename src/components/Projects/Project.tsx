@@ -70,14 +70,14 @@ function Project({}: Props) {
           </Card>
         </Paper>
       </Grid>
-      <Grid item md={5} sx={{ padding: "0.5rem" }}>
+      <Grid item xs={12} md={5} sx={{ padding: "0.5rem" }}>
         <Stack
           direction="row"
           alignItems="center"
           sx={{
             background: "",
             height: "100%",
-            padding: "1rem",
+            padding: { xs: 0, md: "1rem" },
           }}
         >
           <div className="git" style={{ transform: "translateX(300%)" }}>

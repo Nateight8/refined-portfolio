@@ -31,6 +31,7 @@ function NavBar({}: Props) {
             paddingY: "1rem",
             opacity: 0,
             fontSize: "1.5rem",
+            userSelect: "none",
           }}
         >
           Mbaocha Jonathan
@@ -42,11 +43,11 @@ function NavBar({}: Props) {
             maxWidth: "35rem",
             opacity: 0,
             fontWeight: 300,
+            userSelect: "none",
           }}
         >
-          I am a Front End Developer with a strong understanding of UI/UX
-          Designs and a passion for building beautiful and functional web
-          applications
+          I am a Frontend Developer with a strong understanding of UI/UX Designs
+          and a passion for building beautiful and functional web applications
         </Typography>
       </Box>
       <Socials />

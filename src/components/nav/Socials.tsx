@@ -41,13 +41,21 @@ function Socials({}: Props) {
         </Tooltip>
       </Box>
       <Box sx={{ display: { xs: "none", sm: "block" } }}>
-        <IconButton aria-label="twitter">
+        <IconButton aria-label="twitter" target="_blank" href="">
           <TwitterIcon />
         </IconButton>
-        <IconButton aria-label="twitter">
+        <IconButton
+          aria-label="twitter"
+          target="_blank"
+          href="https://github.com/Nateight8"
+        >
           <GitHubIcon />
         </IconButton>
-        <IconButton aria-label="twitter">
+        <IconButton
+          aria-label="twitter"
+          target="_blank"
+          href="https://www.linkedin.com/in/mbaocha-jonathan-a511671b5"
+        >
           <LinkedInIcon />
         </IconButton>
       </Box>

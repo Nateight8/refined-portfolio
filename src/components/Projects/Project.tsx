@@ -43,6 +43,7 @@ function Project({}: Props) {
           sx={{
             borderRadius: "1rem",
             background: "#2d2d34",
+            userSelect: "none",
           }}
         >
           <Card
@@ -61,9 +62,9 @@ function Project({}: Props) {
             <CardContent>
               <Typography variant="h6">Connect Stores</Typography>
               <Typography variant="body2" sx={{ opacity: 0.6 }}>
-                This impressive paella is a perfect party dish and a fun meal to
-                cook together with your guests. Add 1 cup of frozen peas along
-                with the mussels, if you like.
+                This web application was built with React, Redux. Implemented
+                server-side rendering(NextJs) and optimized images to improve
+                the loading speed of the homepage.
               </Typography>
             </CardContent>
           </Card>
@@ -80,12 +81,22 @@ function Project({}: Props) {
           }}
         >
           <div className="git" style={{ transform: "translateX(300%)" }}>
-            <Button variant="text" startIcon={<GitHubIcon />}>
+            <Button
+              href="https://github.com/Nateight8/connect-decor-ecommerce"
+              target="_blank"
+              variant="text"
+              startIcon={<GitHubIcon />}
+            >
               Github Repo
             </Button>
           </div>
           <div className="web" style={{ transform: "translateX(300%)" }}>
-            <Button variant="text" startIcon={<WebIcon />}>
+            <Button
+              variant="text"
+              target="_blank"
+              href="https://connect-interior.vercel.app/"
+              startIcon={<WebIcon />}
+            >
               Visit website
             </Button>
           </div>

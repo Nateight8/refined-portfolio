@@ -12,9 +12,10 @@ function StackComp({ logo }: Props) {
     <Grid item xs={4} sm={3} md={2} sx={{ padding: "0.5rem" }}>
       <Tooltip title={tip} arrow followCursor>
         <Paper
+          className="stack"
           sx={{
             height: "7rem",
-            background: "#222d3d",
+            background: "#2d2d34",
             width: "100%",
             padding: "1rem",
           }}

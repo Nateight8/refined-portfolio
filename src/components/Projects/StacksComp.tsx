@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import Grid from "@mui/material/Grid";
 import StackComp from "./StackComp";
+const { gsap } = require("gsap/dist/gsap");
+const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
+
+gsap.registerPlugin(ScrollTrigger);
 type Props = {};
 
 function StacksComp({}: Props) {
@@ -42,6 +46,15 @@ function StacksComp({}: Props) {
       tip: "Framer Motion ",
     },
   ];
+
+  // const stacksRef: RefObject<HTMLDivElement> = useRef(null);
+
+  // useLayoutEffect(() => {
+  //   let stacks = gsap.utils.toArray(".stack");
+  //   stacks.forEach((stack) => {
+  //     gsap.timeline().to(stack, 2, { opacity: 1 });
+  //   });
+  // }, []);
 
   return (
     <Grid container sx={{ paddingY: "1rem", width: "100%" }}>

@@ -7,9 +7,10 @@ type Props = {};
 function NavBar({}: Props) {
   return (
     <Box
+      bgcolor="#22232a"
       sx={{
         marginTop: "5rem",
-        background: "#111010",
+        // background: "secondary",
         position: "sticky",
         top: { xs: "-15rem", sm: "-12.75rem" },
         // bottom: "48px",
@@ -17,13 +18,31 @@ function NavBar({}: Props) {
       }}
     >
       <Box sx={{ paddingBottom: "0.5rem" }}>
-        <Avatar alt="Mbaocha Jonathan" src="/static/images/avatar/1.jpg" />
-        <Typography variant="h5" sx={{ paddingY: "1rem", opacity: 0.8 }}>
+        <Avatar
+          className="av"
+          alt="Mbaocha Jonathan"
+          src="/static/images/avatar/1.jpg"
+          sx={{ opacity: 0 }}
+        />
+        <Typography
+          className="dev"
+          variant="h1"
+          sx={{
+            paddingY: "1rem",
+            opacity: 0,
+            fontSize: "1.5rem",
+          }}
+        >
           Mbaocha Jonathan
         </Typography>
         <Typography
+          className="bio"
           variant="body1"
-          sx={{ maxWidth: "35rem", opacity: 0.5, fontWeight: 300 }}
+          sx={{
+            maxWidth: "35rem",
+            opacity: 0,
+            fontWeight: 300,
+          }}
         >
           I am a Front End Developer with a strong understanding of UI/UX
           Designs and a passion for building beautiful and functional web

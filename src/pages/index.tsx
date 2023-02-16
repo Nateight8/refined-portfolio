@@ -7,17 +7,41 @@ import NavBar from "@/components/nav/NavBar";
 import Box from "@mui/material/Box";
 import TabPanel from "@/components/nav/TabPanel";
 import Typography from "@mui/material/Typography";
-import React, { useContext } from "react";
+import React, { useContext, useLayoutEffect, useRef, RefObject } from "react";
 import Projects from "@/components/Projects/Projects";
 import { MyGlobalContext } from "@/components/GlobalContext";
 import StacksComp from "@/components/Projects/StacksComp";
 import Timeline from "@/components/Projects/Timeline";
 import Resume from "@/components/resume/Resume";
+import localFont from "@next/font/local";
+const { gsap } = require("gsap/dist/gsap");
+const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
 
+gsap.registerPlugin(ScrollTrigger);
 const inter = Inter({ subsets: ["latin"] });
+// const myFont = localFont({ src: "./fonts/ztgatha-semibold.ttf" });
 
 export default function Home() {
   const value = useContext(MyGlobalContext);
+  const app: RefObject<HTMLDivElement> = useRef(null);
+
+  useLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      // timeline navbar
+      let navTl = gsap.timeline();
+      navTl
+        .to(".av", 1, { opacity: 1 })
+        .to(".dev", 1, { opacity: 0.8 }, 0.5)
+        .to(".bio", 1, { opacity: 0.5 }, 0.5)
+        .to(".socials", 1, { opacity: 1 }, 0.5)
+        .to(".tab", 1, { opacity: 1 });
+
+      // timeline for stacks
+      // let stacksTl = gsap.timeline();
+      // stacksTl.to();
+    }, app);
+  }, []);
+
   return (
     <>
       <Head>
@@ -26,7 +50,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container component={"main"} maxWidth="lg" onMouseOver={() => {}}>
+      <Container
+        className={inter.className}
+        component={"main"}
+        maxWidth="lg"
+        ref={app}
+      >
         <NavBar />
 
         <TabPanel value={value.value} index={0}>
@@ -41,6 +70,7 @@ export default function Home() {
         <TabPanel value={value.value} index={3}>
           <Resume />
         </TabPanel>
+        <Box sx={{ height: "50vh" }} />
       </Container>
     </>
   );

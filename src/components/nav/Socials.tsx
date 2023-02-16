@@ -19,9 +19,11 @@ type Props = {};
 function Socials({}: Props) {
   return (
     <Stack
+      className="socials"
       sx={{
         flexDirection: { xs: "column", sm: "row" },
         alignItems: { md: "center" },
+        opacity: 0,
       }}
       alignItems="center"
       justifyContent="space-between"

@@ -22,11 +22,12 @@ function TabsComp({}: Props) {
   return (
     <>
       <Box
-        // ref={box}
+        className="tab"
         sx={{
           borderBottom: 1,
           borderColor: "rgba(124,124,125,0.6)",
           marginTop: "1.25rem",
+          opacity: 0,
         }}
       >
         <Tabs

@@ -1,8 +1,18 @@
-import React from "react";
-import { Grid, Box, Typography, IconButton, Stack } from "@mui/material";
+import React, { useLayoutEffect, useRef } from "react";
+import {
+  Grid,
+  Box,
+  Typography,
+  IconButton,
+  Stack,
+  Paper,
+  Button,
+} from "@mui/material";
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import WebIcon from "@mui/icons-material/Web";
 
 type Props = {};
 
@@ -24,31 +34,64 @@ function Project({}: Props) {
     top: 0,
     transform: "translateY(100%)",
   };
+
   return (
-    <Grid item xs={12} md={7} sx={{ padding: "0.5rem" }}>
-      <Card
-        sx={{
-          background: "transparent",
-          border: "1px solid RGBA(255, 255, 255, 0.2)",
-        }}
-      >
-        <CardMedia
-          component="img"
-          height="194"
-          image="/pro/connect.png"
-          alt="Paella dish"
-          sx={{ objectFit: "cover", height: "15rem" }}
-        />
-        <CardContent>
-          <Typography variant="h6">Connect Stores</Typography>
-          <Typography variant="body2" sx={{ opacity: 0.6 }}>
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
+    <>
+      <Grid item xs={12} md={7} mb={2} sx={{ padding: "0.5rem" }}>
+        <Paper
+          className="card"
+          sx={{
+            borderRadius: "1rem",
+            background: "#2d2d34",
+          }}
+        >
+          <Card
+            sx={{
+              background: "#2d2d34",
+              // border: "1px solid RGBA(255, 255, 255, 0.2)",
+            }}
+          >
+            <CardMedia
+              component="img"
+              height="194"
+              image="/pro/connect.png"
+              alt="Paella dish"
+              sx={{ objectFit: "cover", height: "15rem" }}
+            />
+            <CardContent>
+              <Typography variant="h6">Connect Stores</Typography>
+              <Typography variant="body2" sx={{ opacity: 0.6 }}>
+                This impressive paella is a perfect party dish and a fun meal to
+                cook together with your guests. Add 1 cup of frozen peas along
+                with the mussels, if you like.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Paper>
+      </Grid>
+      <Grid item md={5} sx={{ padding: "0.5rem" }}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          sx={{
+            background: "",
+            height: "100%",
+            padding: "1rem",
+          }}
+        >
+          <div className="git" style={{ transform: "translateX(300%)" }}>
+            <Button variant="text" startIcon={<GitHubIcon />}>
+              Github Repo
+            </Button>
+          </div>
+          <div className="web" style={{ transform: "translateX(300%)" }}>
+            <Button variant="text" startIcon={<WebIcon />}>
+              Visit website
+            </Button>
+          </div>
+        </Stack>
+      </Grid>
+    </>
   );
 }
 

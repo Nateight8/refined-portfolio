@@ -2,6 +2,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Project from "./Project";
+import { data } from "../utils/data";
 
 const { gsap } = require("gsap/dist/gsap");
 const { ScrollTrigger } = require("gsap/dist/ScrollTrigger");
@@ -50,14 +51,14 @@ function Projects({}: Props) {
 
   return (
     <Box sx={{ paddingY: "5rem", overflowX: "hidden" }}>
-      {[1, 2, 3].map((item) => (
+      {data.map((item) => (
         <Grid
           container
-          key={item}
+          key={item.src}
           className="project-pannel"
           sx={{ opacity: 0 }}
         >
-          <Project />
+          <Project item={item} />
         </Grid>
       ))}
     </Box>

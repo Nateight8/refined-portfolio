@@ -14,9 +14,11 @@ import CardContent from "@mui/material/CardContent";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import WebIcon from "@mui/icons-material/Web";
 
-type Props = {};
+type Props = {
+  item: { src: string; git: string };
+};
 
-function Project({}: Props) {
+function Project({ item }: Props) {
   const cardStyle = {
     position: "relative",
     height: "200px",
@@ -54,19 +56,18 @@ function Project({}: Props) {
           >
             <CardMedia
               component="img"
-              height="194"
-              image="/pro/connect.png"
+              image={item.src}
               alt="Paella dish"
               sx={{ objectFit: "cover", height: "15rem" }}
             />
-            <CardContent>
+            {/* <CardContent>
               <Typography variant="h6">Connect Stores</Typography>
               <Typography variant="body2" sx={{ opacity: 0.6 }}>
                 This web application was built with React, Redux. Implemented
                 server-side rendering(NextJs) and optimized images to improve
                 the loading speed of the homepage.
               </Typography>
-            </CardContent>
+            </CardContent> */}
           </Card>
         </Paper>
       </Grid>
@@ -82,7 +83,7 @@ function Project({}: Props) {
         >
           <div className="git" style={{ transform: "translateX(300%)" }}>
             <Button
-              href="https://github.com/Nateight8/connect-decor-ecommerce"
+              href={item.git}
               target="_blank"
               variant="text"
               startIcon={<GitHubIcon />}
@@ -94,7 +95,7 @@ function Project({}: Props) {
             <Button
               variant="text"
               target="_blank"
-              href="https://connect-interior.vercel.app/"
+              href={item.web}
               startIcon={<WebIcon />}
             >
               Visit website

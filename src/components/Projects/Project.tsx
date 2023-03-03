@@ -15,7 +15,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WebIcon from "@mui/icons-material/Web";
 
 type Props = {
-  item: { src: string; git: string };
+  item: { src: string; git: string; web: string };
 };
 
 function Project({ item }: Props) {

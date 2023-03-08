@@ -50,28 +50,30 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container
-        className={inter.className}
-        component={"main"}
-        maxWidth="sm"
-        ref={app}
-      >
-        <NavBar />
 
+      <Box className={inter.className} component={"main"} ref={app}>
+        <NavBar />
         <TabPanel value={value.value} index={0}>
           <Projects />
         </TabPanel>
-        <TabPanel value={value.value} index={1}>
-          <StacksComp />
-        </TabPanel>
-        <TabPanel value={value.value} index={2}>
-          <Timeline />
-        </TabPanel>
-        <TabPanel value={value.value} index={3}>
-          <Resume />
-        </TabPanel>
+        <Container
+          className={inter.className}
+          component={"main"}
+          maxWidth="sm"
+          ref={app}
+        >
+          <TabPanel value={value.value} index={1}>
+            <StacksComp />
+          </TabPanel>
+          <TabPanel value={value.value} index={2}>
+            <Timeline />
+          </TabPanel>
+          <TabPanel value={value.value} index={3}>
+            <Resume />
+          </TabPanel>
+        </Container>
         {/* <Box sx={{ height: "50vh" }} /> */}
-      </Container>
+      </Box>
     </>
   );
 }

@@ -1,16 +1,17 @@
 import React from "react";
-import { Typography, Box, Avatar } from "@mui/material";
+import { Typography, Box, Avatar, Container } from "@mui/material";
 import Socials from "./Socials";
 import TabsComp from "./TabsComp";
 type Props = {};
 
 function NavBar({}: Props) {
   return (
-    <Box
-      bgcolor="#22232a"
+    <Container
+      maxWidth="sm"
+      // bgcolor="#22232a"
       sx={{
         marginTop: "5rem",
-        // background: "secondary",
+        background: "#22232a",
         position: "sticky",
         top: { xs: "-15rem", sm: "-12.75rem" },
         // bottom: "48px",
@@ -52,7 +53,7 @@ function NavBar({}: Props) {
       </Box>
       <Socials />
       <TabsComp />
-    </Box>
+    </Container>
   );
 }
 

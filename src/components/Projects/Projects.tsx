@@ -50,16 +50,22 @@ function Projects({}: Props) {
   }, []);
 
   return (
-    <Box sx={{ paddingY: "5rem", overflowX: "hidden" }}>
+    <Box
+      sx={{
+        paddingY: "5rem",
+        overflowX: "hidden",
+        maxWidth: "600px",
+        marginX: "auto",
+      }}
+    >
       {data.map((item) => (
-        <Grid
-          container
+        <Box
           key={item.src}
           className="project-pannel"
-          sx={{ opacity: 0 }}
+          sx={{ opacity: 0, paddingX: { xs: 0, md: "24px" } }}
         >
-          <Project item={item} />
-        </Grid>
+          <Project item={item} key={item.src} />
+        </Box>
       ))}
     </Box>
   );

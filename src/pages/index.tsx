@@ -53,7 +53,7 @@ export default function Home() {
       <Container
         className={inter.className}
         component={"main"}
-        maxWidth="lg"
+        maxWidth="sm"
         ref={app}
       >
         <NavBar />
@@ -70,7 +70,7 @@ export default function Home() {
         <TabPanel value={value.value} index={3}>
           <Resume />
         </TabPanel>
-        <Box sx={{ height: "50vh" }} />
+        {/* <Box sx={{ height: "50vh" }} /> */}
       </Container>
     </>
   );

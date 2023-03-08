@@ -39,7 +39,7 @@ function Project({ item }: Props) {
 
   return (
     <>
-      <Grid item xs={12} md={7} mb={2} sx={{ padding: "0.5rem" }}>
+      <Grid item xs={12} sx={{ padding: "0.5rem", paddingBottom: "1rem" }}>
         <Paper
           className="card"
           sx={{
@@ -51,7 +51,6 @@ function Project({ item }: Props) {
           <Card
             sx={{
               background: "#2d2d34",
-              // border: "1px solid RGBA(255, 255, 255, 0.2)",
             }}
           >
             <CardMedia
@@ -60,48 +59,26 @@ function Project({ item }: Props) {
               alt="Paella dish"
               sx={{ objectFit: "cover", height: "15rem" }}
             />
-            {/* <CardContent>
-              <Typography variant="h6">Connect Stores</Typography>
-              <Typography variant="body2" sx={{ opacity: 0.6 }}>
-                This web application was built with React, Redux. Implemented
-                server-side rendering(NextJs) and optimized images to improve
-                the loading speed of the homepage.
-              </Typography>
-            </CardContent> */}
           </Card>
         </Paper>
-      </Grid>
-      <Grid item xs={12} md={5} sx={{ padding: "0.5rem" }}>
-        <Stack
-          direction="row"
-          alignItems="center"
-          sx={{
-            background: "",
-            height: "100%",
-            padding: { xs: 0, md: "1rem" },
-          }}
-        >
-          <div className="git" style={{ transform: "translateX(300%)" }}>
-            <Button
-              href={item.git}
-              target="_blank"
-              variant="text"
-              startIcon={<GitHubIcon />}
-            >
-              Github Repo
-            </Button>
-          </div>
-          <div className="web" style={{ transform: "translateX(300%)" }}>
-            <Button
-              variant="text"
-              target="_blank"
-              href={item.web}
-              startIcon={<WebIcon />}
-            >
-              Visit website
-            </Button>
-          </div>
-        </Stack>
+        <Box>
+          <Button
+            href={item.git}
+            target="_blank"
+            variant="text"
+            startIcon={<GitHubIcon />}
+          >
+            Github Repo
+          </Button>
+          <Button
+            variant="text"
+            target="_blank"
+            href={item.web}
+            startIcon={<WebIcon />}
+          >
+            Visit website
+          </Button>
+        </Box>
       </Grid>
     </>
   );

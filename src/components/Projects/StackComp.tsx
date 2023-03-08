@@ -9,7 +9,7 @@ type Props = {
 function StackComp({ logo }: Props) {
   const { src, tip } = logo;
   return (
-    <Grid item xs={4} sm={3} md={2} sx={{ padding: "0.5rem" }}>
+    <Grid item xs={4} sm={3} sx={{ padding: "0.5rem" }}>
       <Tooltip title={tip} arrow followCursor>
         <Paper
           className="stack"
